@@ -1,17 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es-mx">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure Static Web Apps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
 </head>
-
 <body>
-  <main>
-    <h1>Hola mundo</h1>
-  </main>
-</body>
 
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Azure <span>Static Web Apps</span></div>
+    <nav>
+      <a href="#que-es">¿Qué es?</a>
+      <a href="#nube">Tipo de nube</a>
+      <a href="#paas">Modelo PaaS</a>
+      <a href="#comparativa">Comparativa</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Microsoft Azure · Static Web Apps</div>
+      <h1>Despliega tu web<br>en la <em>nube pública</em><br>de Azure</h1>
+      <p>Azure Static Web Apps (SWA) es un servicio en la nube que te permite alojar aplicaciones web estáticas de forma rápida, segura y automática, integrado directamente con tu repositorio de código.</p>
+      <div class="hero-cta">
+        <a href="#que-es" class="btn-primary">Conoce más →</a>
+        <a href="#paas" class="btn-secondary">Modelo PaaS</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="azure-card">
+        <div class="card-header">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <span class="card-title">azure-static-web-app.json</span>
+        </div>
+        <div class="code-block">
+          <div><span class="comment">// Configuración del recurso</span></div>
+          <div><span class="key">"type"</span><span style="color:#fff">: </span><span class="string">"Microsoft.Web/staticSites"</span>,</div>
+          <div><span class="key">"sku"</span><span style="color:#fff">: {</span></div>
+          <div>&nbsp;&nbsp;<span class="key">"name"</span><span style="color:#fff">: </span><span class="string">"Free"</span>,</div>
+          <div>&nbsp;&nbsp;<span class="key">"tier"</span><span style="color:#fff">: </span><span class="string">"Free"</span></div>
+          <div><span style="color:#fff">},</span></div>
+          <div><span class="key">"model"</span><span style="color:#fff">: </span><span class="string">"PaaS"</span>,</div>
+          <div><span class="key">"cloud"</span><span style="color:#fff">: </span><span class="string">"Public"</span>,</div>
+          <div><span class="key">"cdn"</span><span style="color:#fff">: </span><span class="value">true</span>,</div>
+          <div><span class="key">"ssl"</span><span style="color:#fff">: </span><span class="value">true</span>,</div>
+          <div><span class="key">"ci_cd"</span><span style="color:#fff">: </span><span class="string">"GitHub Actions"</span></div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num">PaaS</div>
+            <div class="stat-label">Modelo</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">CDN</div>
+            <div class="stat-label">Distribución</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">SSL</div>
+            <div class="stat-label">Seguridad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ ES -->
+  <section id="que-es">
+    <div class="section-label">Definición</div>
+    <h2 class="section-title">¿Qué es Azure<br>Static Web Apps?</h2>
+    <p class="section-subtitle">Un servicio administrado que simplifica el ciclo completo de desarrollo y despliegue de aplicaciones web modernas.</p>
+
+    <div class="what-grid">
+      <div class="what-text">
+        <p>Azure Static Web Apps (SWA) es un servicio de Microsoft Azure diseñado para alojar aplicaciones web estáticas — sitios HTML, CSS, JavaScript y frameworks modernos como React, Angular, Vue o Blazor.</p>
+        <p>A diferencia de un servidor tradicional, con SWA <strong>no necesitas configurar infraestructura</strong>. Azure se encarga de la red de distribución, certificados SSL, escalado automático y las integraciones con tu repositorio de GitHub o Azure DevOps.</p>
+        <p>Cada vez que haces un <em>push</em> a tu rama principal, GitHub Actions construye y despliega tu app automáticamente al CDN global de Azure.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>💡 En pocas palabras</h3>
+        <p>Conectas tu repositorio de código, Azure detecta los cambios, construye tu aplicación y la despliega automáticamente en servidores distribuidos alrededor del mundo — sin que tú tengas que gestionar ningún servidor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPO DE NUBE -->
+  <section id="nube" style="background: #f8fbff;">
+    <div class="section-label">Infraestructura</div>
+    <h2 class="section-title">Tipo de nube que utiliza</h2>
+    <p class="section-subtitle">Azure Static Web Apps opera exclusivamente sobre la nube pública de Microsoft Azure.</p>
+
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="card-icon">🌐</div>
+        <h3>Nube Pública</h3>
+        <p>SWA utiliza la <strong>nube pública de Azure</strong>, la infraestructura compartida de Microsoft disponible globalmente. Los recursos están en datacenters de Microsoft y se comparten entre múltiples clientes de forma segura y aislada.</p>
+        <span class="badge-tag">Microsoft Azure Public Cloud</span>
+      </div>
+
+      <div class="info-card">
+        <div class="card-icon">🌍</div>
+        <h3>CDN Global</h3>
+        <p>Tu aplicación se distribuye automáticamente a través de la <strong>red de entrega de contenido (CDN)</strong> de Azure, con nodos en múltiples regiones del mundo para ofrecer baja latencia a tus usuarios sin importar su ubicación.</p>
+        <span class="badge-tag">Azure CDN</span>
+      </div>
+
+      <div class="info-card">
+        <div class="card-icon">🔒</div>
+        <h3>SSL Automático</h3>
+        <p>Azure gestiona automáticamente los <strong>certificados SSL/TLS</strong> para tu dominio. No necesitas comprar ni renovar certificados manualmente — tu sitio siempre estará disponible en HTTPS.</p>
+        <span class="badge-tag">TLS/SSL Administrado</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAAS -->
+  <section id="paas" class="paas-section">
+    <div class="section-label">Modelo de servicio</div>
+    <h2 class="section-title">Plataforma como Servicio<br><em style="color: var(--azure-light); font-style:normal;">PaaS</em></h2>
+    <p class="section-subtitle">Azure Static Web Apps es un servicio PaaS (Platform as a Service), lo que significa que Microsoft administra la plataforma por ti.</p>
+
+    <div class="paas-grid">
+      <div class="paas-card">
+        <div class="card-icon">🏗️</div>
+        <h3>Infraestructura administrada</h3>
+        <p>No te preocupas por servidores, sistemas operativos, parches de seguridad ni mantenimiento. Microsoft gestiona toda la capa de infraestructura.</p>
+      </div>
+
+      <div class="paas-card">
+        <div class="card-icon">⚙️</div>
+        <h3>Tú controlas el código</h3>
+        <p>Como desarrollador solo te enfocas en escribir y desplegar tu aplicación. El entorno de ejecución, escalado y disponibilidad los maneja Azure.</p>
+      </div>
+
+      <div class="paas-card">
+        <div class="card-icon">🚀</div>
+        <h3>CI/CD integrado</h3>
+        <p>Se integra con GitHub Actions o Azure DevOps para despliegue continuo. Cada commit en tu repositorio genera un despliegue automático.</p>
+      </div>
+
+      <div class="paas-card">
+        <div class="card-icon">📦</div>
+        <h3>API integrada</h3>
+        <p>Puedes conectar funciones serverless de Azure Functions directamente como tu backend API, todo dentro del mismo recurso.</p>
+      </div>
+
+      <div class="paas-card">
+        <div class="card-icon">📈</div>
+        <h3>Escalado automático</h3>
+        <p>Azure escala automáticamente tu aplicación según la demanda, sin configuración adicional. Desde 0 hasta millones de visitas.</p>
+      </div>
+
+      <div class="paas-card">
+        <div class="card-icon">💰</div>
+        <h3>Plan gratuito disponible</h3>
+        <p>Cuenta con un plan Free ideal para proyectos personales, estudiantes y aplicaciones de bajo tráfico, sin costo mensual.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVA -->
+  <section id="comparativa" class="compare-section">
+    <div class="section-label">Comparativa</div>
+    <h2 class="section-title">IaaS vs PaaS vs SaaS</h2>
+    <p class="section-subtitle">Entendiendo dónde encaja Azure Static Web Apps en los modelos de servicio en la nube.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th>IaaS (Infraestructura)</th>
+          <th>PaaS — SWA ✓</th>
+          <th>SaaS (Software)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gestión del servidor</td>
+          <td>👤 Tú</td>
+          <td>☁️ Azure</td>
+          <td>☁️ Proveedor</td>
+        </tr>
+        <tr>
+          <td>Sistema operativo</td>
+          <td>👤 Tú</td>
+          <td>☁️ Azure</td>
+          <td>☁️ Proveedor</td>
+        </tr>
+        <tr>
+          <td>Tiempo de ejecución</td>
+          <td>👤 Tú</td>
+          <td>☁️ Azure</td>
+          <td>☁️ Proveedor</td>
+        </tr>
+        <tr>
+          <td>Tu aplicación</td>
+          <td>👤 Tú</td>
+          <td>👤 Tú</td>
+          <td>☁️ Proveedor</td>
+        </tr>
+        <tr>
+          <td>Tus datos</td>
+          <td>👤 Tú</td>
+          <td>👤 Tú</td>
+          <td>👤 Tú</td>
+        </tr>
+        <tr>
+          <td>Ejemplo Azure</td>
+          <td>Azure VMs</td>
+          <td><strong>Static Web Apps</strong></td>
+          <td>Microsoft 365</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">Azure <span style="color:rgba(255,255,255,0.4)">Static Web Apps</span></div>
+    <span>Hecho con esfuerzo — Artemis 🚀</span>
+  </footer>
+
+</body>
 </html>
